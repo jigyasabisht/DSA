@@ -1,13 +1,22 @@
-// recursion -  calling function again and again
+// Maneuvering a Cave Problem
+
 import java.util.*;
-public class ManeuveringCave
+public class Main
 {
     static int maneuvering_cave(int m, int n)
     {
-        if (m == 1 || n == 1)
-            return 1;
-            
-        return maneuvering_cave(m - 1, n) + maneuvering_cave(m, n - 1);
+        int[] dp = new int[n];
+        dp[0] = 1;
+  
+        for (int i = 0; i < m; i++) 
+        {
+            for (int j = 1; j < n; j++) 
+            {
+                dp[j] += dp[j - 1];
+            }
+        }
+  
+        return dp[n - 1];
     }
 	public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
