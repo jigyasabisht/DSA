@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 public class Balancedbrackets
 {
@@ -15,25 +16,25 @@ public class Balancedbrackets
 	        }
 	        else if(ch==')')
 	        {
-	            boolean val = handleClossing(st, ')');
+	            boolean val = handleClossing(st, '(');
 	            if(val==false)
 	            {
 	                System.out.println(val);
 	                return;
 	            }
 	        }
-	            else if(ch=='{')
+	            else if(ch=='}')
 	            {
-	               boolean val = handleClossing(st, '}');
+	               boolean val = handleClossing(st, '{');
 	               if(val==false)
 	               {
 	                    System.out.println(val);
 	                    return;
 	                }
 	            }
-	            else if(ch=='[')
+	            else if(ch==']')
 	            {
-	               boolean val = handleClossing(st, ']');
+	               boolean val = handleClossing(st, '[');
 	               if(val==false)
 	               {
 	                    System.out.println(val);
